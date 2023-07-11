@@ -97,7 +97,7 @@ class VideoTestDataset(data.Dataset):
                     self.imgs_lq[subfolder_name] = img_paths_lq
                     self.imgs_gt[subfolder_name] = img_paths_gt
         else:
-            raise ValueError(f'Non-supported video test dataset: {type(opt["name"])}')
+            raise ValueError(f'Non-supported video test dataset: {(opt["name"])}')
 
     def __getitem__(self, index):
         folder = self.data_info['folder'][index]
