@@ -8,8 +8,8 @@ def generate_meta_info_div2k():
     """Generate meta info for DIV2K dataset.
     """
 
-    gt_folder = 'datasets/DIV2K/DIV2K_train_HR_sub/'
-    meta_info_txt = 'basicsr/data/meta_info/meta_info_DIV2K800sub_GT.txt'
+    gt_folder = r'F:\DeAbe\Data\TP_Video_X4\train\GT'
+    meta_info_txt = r'F:\DeAbe\Data\TP_Video_X4\train\GT\meta_info_TP_Video.txt'
 
     img_list = sorted(list(scandir(gt_folder)))
 
@@ -29,6 +29,19 @@ def generate_meta_info_div2k():
             print(idx + 1, info)
             f.write(f'{info}\n')
 
+def generate_meta_info_reds():
+    """Generate meta info for REDS dataset.
+    """
+
+    gt_folder = r'F:\DeAbe\Data\TP_Video_X4\train\GT'
+    meta_info_txt = r'F:\DeAbe\Data\TP_Video_X4\train\GT\meta_info_TP_Video.txt'
+
+    with open(meta_info_txt, 'w') as f:
+        for i in range(84):
+            info = '%03d' % i + f' 40 ({512},{512},{1})'
+            print(i + 1, info)
+            f.write(f'{info}\n')
+
 
 if __name__ == '__main__':
-    generate_meta_info_div2k()
+    generate_meta_info_reds()

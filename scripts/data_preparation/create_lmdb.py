@@ -74,14 +74,14 @@ def create_lmdb_for_reds():
         Remember to modify opt configurations according to your settings.
     """
     # train_sharp
-    folder_path = 'datasets/REDS/train_sharp'
-    lmdb_path = 'datasets/REDS/train_sharp_with_val.lmdb'
+    folder_path = r'F:\DeAbe\Data\TP_Video_X4\train\GT'
+    lmdb_path = r'F:\DeAbe\Data\TP_Video_X4\train\GT\train_sharp_with_val.lmdb'
     img_path_list, keys = prepare_keys_reds(folder_path)
     make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys, multiprocessing_read=True)
 
     # train_sharp_bicubic
-    folder_path = 'datasets/REDS/train_sharp_bicubic'
-    lmdb_path = 'datasets/REDS/train_sharp_bicubic_with_val.lmdb'
+    folder_path = r'F:\DeAbe\Data\TP_Video_X4\train\Abe'
+    lmdb_path = r'F:\DeAbe\Data\TP_Video_X4\train\Abe\train_sharp_bicubic_with_val.lmdb'
     img_path_list, keys = prepare_keys_reds(folder_path)
     make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys, multiprocessing_read=True)
 

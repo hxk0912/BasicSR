@@ -62,6 +62,7 @@ class VideoTestDataset(data.Dataset):
                 subfolders = [line.split(' ')[0] for line in fin]
                 subfolders_lq = [osp.join(self.lq_root, key) for key in subfolders]
                 subfolders_gt = [osp.join(self.gt_root, key) for key in subfolders]
+
         else:
             subfolders_lq = sorted(glob.glob(osp.join(self.lq_root, '*')))
             subfolders_gt = sorted(glob.glob(osp.join(self.gt_root, '*')))

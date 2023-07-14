@@ -253,6 +253,8 @@ class REDSRecurrentDataset(data.Dataset):
                 folder, frame_num, _ = line.split(' ')
                 self.keys.extend([f'{folder}/{i:08d}' for i in range(int(frame_num))])
 
+        self.frame_num = int(frame_num)
+
         # remove the video clips used in validation
         if opt['val_partition'] == 'REDS4':
             val_partition = ['000', '011', '015', '020']
@@ -301,8 +303,8 @@ class REDSRecurrentDataset(data.Dataset):
 
         # ensure not exceeding the borders
         start_frame_idx = int(frame_name)
-        if start_frame_idx > 100 - self.num_frame * interval:
-            start_frame_idx = random.randint(0, 100 - self.num_frame * interval)
+        if start_frame_idx > self.frame_num - self.num_frame * interval:
+            start_frame_idx = random.randint(0, self.frame_num - self.num_frame * interval)
         end_frame_idx = start_frame_idx + self.num_frame * interval
 
         neighbor_list = list(range(start_frame_idx, end_frame_idx, interval))

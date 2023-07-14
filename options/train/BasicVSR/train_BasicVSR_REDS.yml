@@ -1,7 +1,7 @@
 # general settings
-name: BasicVSR_REDS_Deblur_x1
+name: BasicVSR_TP_Video_Deblur_x4
 model_type: VideoRecurrentModel
-scale: 1
+scale: 4
 num_gpu: auto  # official: 8 GPUs
 manual_seed: 0
 
@@ -10,9 +10,9 @@ datasets:
   train:
     name: REDS
     type: REDSRecurrentDataset
-    dataroot_gt: F:\DeAbe\Data\REDS\Sharp\train\train_sharp
-    dataroot_lq: F:\DeAbe\Data\REDS\Blur\train\train_blur
-    meta_info_file: F:\DeAbe\EDVR\BasicSR\basicsr\data\meta_info\meta_info_REDS_GT.txt
+    dataroot_gt: F:\DeAbe\Data\TP_Video_X4\train\GT
+    dataroot_lq: F:\DeAbe\Data\TP_Video_X4\train\Abe
+    meta_info_file: F:\DeAbe\EDVR\BasicSR\basicsr\data\meta_info\meta_info_TP_Video.txt
     val_partition: 'REDS4'  # set to 'official' when use the official validation partition
     test_mode: False
     io_backend:
@@ -26,17 +26,16 @@ datasets:
     use_rot: true
 
     # data loader
-    num_worker_per_gpu: 3
-    batch_size_per_gpu: 1
+    num_worker_per_gpu: 6
+    batch_size_per_gpu: 4
     dataset_enlarge_ratio: 200
     prefetch_mode: ~
 
   val:
     name: 'REDS4'
     type: VideoRecurrentTestDataset
-    dataroot_gt: F:\DeAbe\Data\REDS\Sharp\val\val_sharp
-    dataroot_lq: F:\DeAbe\Data\REDS\Blur\val\val_blur
-    meta_info_file: F:\DeAbe\EDVR\BasicSR\basicsr\data\meta_info\meta_info_REDS4_test_GT.txt
+    dataroot_gt: F:\DeAbe\Data\TP_Video_X4\val\GT
+    dataroot_lq: F:\DeAbe\Data\TP_Video_X4\val\Abe
     cache_data: true
     io_backend:
       type: disk
