@@ -42,6 +42,20 @@ def generate_meta_info_reds():
             print(i + 1, info)
             f.write(f'{info}\n')
 
+def generate_meta_info_SO_Video():
+    """Generate meta info for SO_Video dataset.
+    """
+
+    gt_folder = r'F:\DeAbe\Data\TP_Video_X4\train\GT'
+    meta_info_txt = r'F:\DeAbe\Data\SO_Video_Data\train\GT\meta_info_TP_Video.txt'
+
+    with open(meta_info_txt, 'w') as f:
+        for i in range(240):
+            info = '%03d' % i + f' 40 ({512},{512},{1})'
+            print(i + 1, info)
+            f.write(f'{info}\n')
+
+
 
 if __name__ == '__main__':
-    generate_meta_info_reds()
+    generate_meta_info_SO_Video()
