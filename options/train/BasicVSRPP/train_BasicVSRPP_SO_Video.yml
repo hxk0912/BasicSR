@@ -10,15 +10,15 @@ datasets:
   train:
     name: REDS
     type: REDSRecurrentDataset
-    dataroot_gt: /home/haojiang/data/TP_Video_X1/train/GT/
-    dataroot_lq: /home/haojiang/data/TP_Video_X1/train/Abe/
+    dataroot_gt: F:\DeAbe\Data\SO_Video_Data_pic5\train\GT
+    dataroot_lq: F:\DeAbe\Data\SO_Video_Data_pic5\train\Abe
     meta_info_file: basicsr/data/meta_info/meta_info_SO_Video.txt
     val_partition: REDS4  # set to 'official' when use the official validation partition
     test_mode: False
     io_backend:
       type: disk
 
-    num_frame: 15
+    num_frame: 5
     gt_size: 256
     interval_list: [1]
     random_reverse: false
@@ -34,8 +34,8 @@ datasets:
   val:
     name: REDS4
     type: VideoRecurrentTestDataset
-    dataroot_gt: /home/haojiang/data/TP_Video_X1/val/GT/
-    dataroot_lq: /home/haojiang/data/TP_Video_X1/val/Abe/
+    dataroot_gt: F:\DeAbe\Data\SO_Video_Data_pic5\val\GT
+    dataroot_lq: F:\DeAbe\Data\SO_Video_Data_pic5\val\Abe
     cache_data: true
     io_backend:
       type: disk

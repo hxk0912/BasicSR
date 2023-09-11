@@ -1,4 +1,4 @@
-name: 0716_BasicVSR_TP_Video_Deblur_x4
+name: 0831_BasicVSR_TP_Test80_Deblur_x1
 model_type: VideoRecurrentModel
 scale: 4
 num_gpu: 1  # set num_gpu: 0 for cpu mode
@@ -8,8 +8,8 @@ datasets:
   test_1:  # the 1st test dataset
     name: 'redsofficial'
     type: VideoRecurrentTestDataset
-    dataroot_gt: /home/haojiang/data/TP_Video_X4/val/GT/
-    dataroot_lq: /home/haojiang/data/TP_Video_X4/val/Abe/
+    dataroot_gt: F:\DeAbe\Data\TwoPhoton_MouseTissue_membrane\DL_results\BasicVSR\80to120
+    dataroot_lq: F:\DeAbe\Data\TwoPhoton_MouseTissue_membrane\DL_results\RCAN\80to120
     cache_data: True
     io_backend:
       type: disk
@@ -26,7 +26,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: /home/haojiang/hxk/BasicSR/experiments/0716_BasicVSR_TP_Video_Deblur_x4/models/net_g_80000.pth
+  pretrain_network_g: F:\DeAbe\EDVR\net_g_70000.pth
   strict_load_g: true
 
 # validation settings
