@@ -1,4 +1,4 @@
-name: 0925_BasicVSRPP_SO_PIC3_Deblur_x1
+name: 0925_BasicVSRPP_SO_PIC3_Deblur_x1_idealPSF
 model_type: VideoRecurrentModel
 scale: 4
 num_gpu: 1  # set num_gpu: 0 for cpu mode
@@ -8,8 +8,8 @@ datasets:
   test_1:  # the 1st test dataset
     name: 'redsofficial'
     type: VideoRecurrentTestDataset
-    dataroot_gt: F:\DeAbe\Data\SO_Video_Data_pic5\val\GT
-    dataroot_lq: F:\DeAbe\Data\SO_Video_Data_pic5\val\Abe
+    dataroot_gt: E:\DeAbe\Data\SO_Video_Data_pic3_idealPSF\val\GT
+    dataroot_lq: E:\DeAbe\Data\SO_Video_Data_pic3_idealPSF\val\Abe
     cache_data: True
     io_backend:
       type: disk
@@ -26,7 +26,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: F:\DeAbe\EDVR\net_g_465000.pth
+  pretrain_network_g: E:\DeAbe\pth\pic3_idealPSF\net_g_465000.pth
   strict_load_g: true
 
 # validation settings
