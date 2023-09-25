@@ -1,5 +1,5 @@
 # general settings
-name: 0815_train_BasicVSRPP_TP_Video_X1
+name: 0911_train_BasicVSRPP_TP_Video_X1
 model_type: VideoRecurrentModel
 scale: 1
 num_gpu: 1  # official: 8 GPUs
@@ -18,7 +18,7 @@ datasets:
     io_backend:
       type: disk
 
-    num_frame: 15
+    num_frame: 10
     gt_size: 256
     interval_list: [1]
     random_reverse: false
@@ -46,7 +46,7 @@ datasets:
 network_g:
   type: BasicVSRPlusPlus
   mid_channels: 64
-  num_blocks: 7
+  num_blocks: 9
   is_low_res_input: false
   spynet_path: experiments/pretrained_models/flownet/spynet_sintel_final-3d2a1287.pth
 
@@ -61,7 +61,7 @@ train:
   ema_decay: 0.999
   optim_g:
     type: Adam
-    lr: !!float 1e-4
+    lr: !!float 1e-5
     weight_decay: 0
     betas: [0.9, 0.99]
 
